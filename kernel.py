@@ -1,18 +1,23 @@
+
+print("EsosCMD early testing version\nThis version is an early release and is subject to change.")
+
 # Python imports
 import time, random, getpass, datetime, webbrowser, os, platform, socket
 # EsosCMD imports
 import EsosFunctions
 
-EsosFunctions.SystemStartup()
+EsosFunctions.StartupMessage()
 
 EsosRunning = True
 while EsosRunning:
 
     CurrentWorkingDirectory = os.getcwd()
+    Arg1 = ""
+    Arg2 = ""
 
-    PromptText = "\033[1;32;40m" + getpass.getuser() + "@" + socket.gethostname() + "\033[1;37;40m:\033[1;34;40m" + CurrentWorkingDirectory + "$ "
+    PromptText = "\033[1;32m" + getpass.getuser() + "@" + socket.gethostname() + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "$ "
 
-    CmdLine = input(PromptText + "\033[0;37;40m")
+    CmdLine = input(PromptText + "\033[0;37m")
 
     Command = CmdLine.split(" ")[0]
     try:

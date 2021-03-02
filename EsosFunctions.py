@@ -18,14 +18,12 @@ def SystemException(errlevel = 0, errcode = "0"):
         print("Unspecified system error. You should restart the OS.")
     print(f"Error code: {errcode}")
 
-def SystemStartup():
-    osname = "EsosCMD"
-    print(f"Now loading {osname}…")
-    time.sleep(5)
+def StartupMessage():
     if platform.system == "Darwin":
-        print(f"Running {osname} on macOS with Darwin kernel version {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
+        print(f"Running EsosCMD on macOS with Darwin kernel version {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
     else:
-        print(f"Running {osname} on {str(platform.system())} {str(platform.release())} - " + str(time.strftime("%a %d %b %Y")))
+        print(f"Running EsosCMD on {str(platform.system())} {str(platform.release())} - " + str(time.strftime("%a %d %b %Y")))
 
 def ProgramLaunch(cmdname):
-    pass
+    print(f"The command {cmdname} was not found in any kernel functions.")
+    print(f"EsosCMD commands and external commands are not yet supported.")
