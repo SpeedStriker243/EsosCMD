@@ -1,6 +1,6 @@
 import time, random, getpass, datetime, webbrowser, os, platform
 
-def system_error(errlevel = 0, errcode = "0"):
+def SystemException(errlevel = 0, errcode = "0"):
     if errlevel == 1:
         errcode = "R-" + errcode
         print("A problem has occurred in the system software.\nIt may be possible to continue normally.")
@@ -18,7 +18,7 @@ def system_error(errlevel = 0, errcode = "0"):
         print("Unspecified system error. You should restart the OS.")
     print(f"Error code: {errcode}")
 
-def startup():
+def SystemStartup():
     osname = "EsosCMD"
     print(f"Now loading {osname}…")
     time.sleep(5)
@@ -26,3 +26,6 @@ def startup():
         print(f"Running {osname} on macOS with Darwin kernel version {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
     else:
         print(f"Running {osname} on {str(platform.system())} {str(platform.release())} - " + str(time.strftime("%a %d %b %Y")))
+
+def ProgramLaunch(cmdname):
+    pass
