@@ -12,12 +12,20 @@ EsosRunning = True
 while EsosRunning:
 
     CurrentWorkingDirectory = os.getcwd()
+    UserName = getpass.getuser()
+    ComputerName = socket.gethostname()
+    OSName = platform.system()
     Arg1 = ""
     Arg2 = ""
 
-    PromptText = "\033[1;32m" + getpass.getuser() + "@" + socket.gethostname() + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "$ "
+    if UserName == "root":
+        CommandSeparator = "#"
+    else:
+        CommandSeparator = "$"
 
-    CmdLine = input(PromptText + "\033[0;37m")
+    PromptText = "\033[1;32m" + UserName + "@" + ComputerName + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "\033[m" + CommandSeparator
+
+    CmdLine = input(PromptText)
 
     Command = CmdLine.split(" ")[0]
     try:
@@ -36,6 +44,15 @@ while EsosRunning:
             else:
                 print(CurrentWorkingDirectory)
         except:
-            print(CurrentWorkingDirectory)
+            print(f"Your current directory is {CurrentWorkingDirectory}.")
+    elif Command == "whoami":
+        print(f"You are {UserName}.")
+    elif Command == "exit":
+        print("Thanks for trying out EsosCMD!")
+        if OSName == "Windows":
+            print("Exiting to command prompt.")
+        else:
+            print("Exiting to terminal.")
+        EsosRunning = False
     else:
-        EsosFunctions.ProgramLaunch(Command)
+        EsosFunctions.EsosCommand(Command)

@@ -19,11 +19,11 @@ def SystemException(errlevel = 0, errcode = "0"):
     print(f"Error code: {errcode}")
 
 def StartupMessage():
-    if platform.system == "Darwin":
+    if platform.system() == "Darwin":
         print(f"Running EsosCMD on macOS with Darwin kernel version {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
     else:
         print(f"Running EsosCMD on {str(platform.system())} {str(platform.release())} - " + str(time.strftime("%a %d %b %Y")))
 
-def ProgramLaunch(cmdname):
-    print(f"The command {cmdname} was not found in any kernel functions.")
+def EsosCommand(cmdname):
+    print(f"'{cmdname}' doesn't match a built-in command.")
     print(f"EsosCMD commands and external commands are not yet supported.")
