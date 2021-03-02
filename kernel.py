@@ -18,7 +18,7 @@ def system_error(errlevel = 0, errcode = "0"):
         print("Unspecified system error. You should restart the OS.")
     print(f"Error code: {errcode}")
 
-osname = "Very Extremely Good OS"
+osname = "EsosCMD"
 print(f"Now loading {osname}…")
 time.sleep(5)
 if platform.system == "Darwin":
