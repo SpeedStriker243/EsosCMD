@@ -17,6 +17,8 @@ while EsosRunning:
     OSName = platform.system()
     Arg1 = ""
     Arg2 = ""
+    Arg3 = ""
+    Arg4 = ""
 
     if UserName == "root":
         CommandSeparator = "# "
@@ -31,6 +33,8 @@ while EsosRunning:
     try:
         Arg1 = CmdLine.split(" ")[1]
         Arg2 = CmdLine.split(" ")[2]
+        Arg3 = CmdLine.split(" ")[3]
+        Arg4 = CmdLine.split(" ")[4]
     except IndexError:
         pass
 
@@ -45,8 +49,21 @@ while EsosRunning:
                 print(CurrentWorkingDirectory)
         except:
             print(f"Your current directory is {CurrentWorkingDirectory}.")
+
     elif Command == "whoami":
         print(f"You are {UserName}.")
+
+    elif Command == "exec":
+        try:
+            if Arg1 == "":
+                print("The command was entered incorrectly.")
+                print("exec can be used to run native commands, the same way you would in your terminal.")
+                print("Usage: exec <command name>")
+            else:
+                os.system(Arg1 + " " + Arg2 + " " + Arg3 + " " + Arg4)
+        except IndexError:
+            pass
+
     elif Command == "exit":
         print("Thanks for trying out EsosCMD!")
         if OSName == "Windows":
@@ -54,5 +71,6 @@ while EsosRunning:
         else:
             print("Exiting to terminal.")
         EsosRunning = False
+
     else:
         EsosFunctions.EsosCommand(Command)
