@@ -23,6 +23,8 @@ def StartupMessage():
         print(f"Running EsosCMD on macOS with Darwin kernel version {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
     else:
         print(f"Running EsosCMD on {str(platform.system())} {str(platform.release())} - " + str(time.strftime("%a %d %b %Y")))
+        if getpass.getuser() == "root":
+            print("You're logged in as root, so please be careful.")
 
 def EsosCommand(cmdname):
     print(f"'{cmdname}' doesn't match a built-in command.")

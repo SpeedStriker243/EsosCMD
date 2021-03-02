@@ -19,9 +19,9 @@ while EsosRunning:
     Arg2 = ""
 
     if UserName == "root":
-        CommandSeparator = "#"
+        CommandSeparator = "# "
     else:
-        CommandSeparator = "$"
+        CommandSeparator = "$ "
 
     PromptText = "\033[1;32m" + UserName + "@" + ComputerName + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "\033[m" + CommandSeparator
 
