@@ -25,4 +25,4 @@ def startup():
     if platform.system == "Darwin":
         print(f"Running {osname} on macOS with Darwin kernel version {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
     else:
-        print(f"Running {osname} on {str(platform.system())} {str(platform.release())} - ", str(time.strftime("%a %d %b %Y")))
+        print(f"Running {osname} on {str(platform.system())} {str(platform.release())} - " + str(time.strftime("%a %d %b %Y")))
