@@ -1,7 +1,7 @@
 # EsosCMD
 A command-line application written in Python. It's just a simple command processor behind the scenes, but it feels a lot like an OS.
 
-## Roadmap
+## Tasks
 ### Achieved
 - Create a command processor
 - Keep functions in a separate file
