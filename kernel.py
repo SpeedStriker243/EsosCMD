@@ -15,10 +15,7 @@ while EsosRunning:
     UserName = getpass.getuser()
     ComputerName = socket.gethostname()
     OSName = platform.system()
-    Arg1 = ""
-    Arg2 = ""
-    Arg3 = ""
-    Arg4 = ""
+    Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9 = "", "", "", "", "", "", "", "", ""
 
     if UserName == "root":
         CommandSeparator = "# "
@@ -44,6 +41,11 @@ while EsosRunning:
         Arg2 = CmdLine.split(" ")[2]
         Arg3 = CmdLine.split(" ")[3]
         Arg4 = CmdLine.split(" ")[4]
+        Arg5 = CmdLine.split(" ")[5]
+        Arg6 = CmdLine.split(" ")[6]
+        Arg7 = CmdLine.split(" ")[7]
+        Arg8 = CmdLine.split(" ")[8]
+        Arg9 = CmdLine.split(" ")[9]
     except IndexError:
         pass
 
