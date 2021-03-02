@@ -12,3 +12,6 @@ while EsosRunning:
     PromptText = getpass.getuser() + "@" + socket.gethostname() + "|" + CurrentWorkingDirectory + "$ "
 
     CmdLine = input(PromptText)
+    CmdCheck = CmdLine.split('$')[0]
+
+    print(CmdCheck)
