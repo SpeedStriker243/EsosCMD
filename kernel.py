@@ -16,13 +16,21 @@ while EsosRunning:
     ComputerName = socket.gethostname()
     OSName = platform.system()
     Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9 = "", "", "", "", "", "", "", "", ""
+    
+    if OSName == "Windows":
+        Colour = False
+    else:
+        Colour = True
 
     if UserName == "root":
         CommandSeparator = "# "
     else:
         CommandSeparator = "$ "
 
-    PromptText = "\033[1;32m" + UserName + "@" + ComputerName + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "\033[m" + CommandSeparator
+    if Colour:
+        PromptText = "\033[1;32m" + UserName + "@" + ComputerName + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "\033[m" + CommandSeparator
+    else:
+        PromptText =  UserName + "@" + ComputerName + CurrentWorkingDirectory + CommandSeparator
 
     try:
         CmdLine = input(PromptText)
