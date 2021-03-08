@@ -1,7 +1,7 @@
 # EsosCMD
 A command-line application written in Python. It's just a simple command processor behind the scenes, but it feels a lot like an OS.
 
-## What's new with version 0.2
+## What's new with version 0.2-prerelease
 - This segment! Figured I should.
 - EsosScript support.
 - The EsosFunctions file has more purpose now!
