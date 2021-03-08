@@ -6,10 +6,11 @@ A command-line application written in Python. It's just a simple command process
 - Create a command processor
 - Keep functions in a separate file
 - Allow for commands with arguments
+### In progress
+- Create a function that loads an EsosCMD program and runs it
+- Create a scripting language that allows for creation of EsosCMD programs
 ### To do
 - Include commands that give you the versatility of a full terminal emulation package
-- Create a scripting language that allows for creation of EsosCMD programs
-- Create a function that loads an EsosCMD program and runs it
 
 ## Q&A
 ### What does the name mean?
