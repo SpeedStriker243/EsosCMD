@@ -1,4 +1,4 @@
-print("EsosCMD early testing version")
+print("EsosCMD 0.2 (pre-release)")
 print("This version is an early release and is subject to change.")
 
 # Python imports
@@ -7,7 +7,6 @@ import time, random, getpass, datetime, webbrowser, os, platform, socket
 import EsosFunctions
 
 EsosFunctions.StartupMessage()
-
 
 OSName = platform.system()
 if OSName == "Windows":
@@ -25,14 +24,14 @@ while EsosRunning:
 	Arg1, Arg2, Arg3, Arg4, Arg5, Arg6, Arg7, Arg8, Arg9 = "", "", "", "", "", "", "", "", ""
 
 	if UserName == "root":
-		CommandSeparator = "# "
+		CommandSeparator = "#"
 	else:
-		CommandSeparator = "$ "
+		CommandSeparator = "$"
 
 	if Colour:
-		PromptText = "\033[1;32m" + UserName + "@" + ComputerName + "\033[1;37m:\033[1;34m" + CurrentWorkingDirectory + "\033[m" + CommandSeparator
+		PromptText = "\033[1;32m" + UserName + "\033[m@\033[1;34mEsosCMD" + "\033[m:\033[1;36m" + CurrentWorkingDirectory + "\033[m" + CommandSeparator + " "
 	else:
-		PromptText = UserName + "@" + ComputerName + CurrentWorkingDirectory + CommandSeparator
+		PromptText = UserName + "@EsosCMD" + CurrentWorkingDirectory + CommandSeparator + " "
 
 	try:
 		CmdLine = input(PromptText)
@@ -59,6 +58,10 @@ while EsosRunning:
 	except IndexError:
 		pass
 
+	if Command == "version":
+		print("Your version of EsosCMD is version 0.2-prerelease.") 
+		print("This is a prerelease. Stuff isn't fully done.") 
+
 	if Command == "cd":
 		try:
 			if Arg1 != "":
@@ -75,6 +78,10 @@ while EsosRunning:
 
 	elif Command == "whoami":
 		print(f"You are {UserName}.")
+
+	elif Command == "whereami":
+		print(f"Your computer name is {ComputerName}.")
+		print("For your current directory, type 'cd'.")
 
 	elif Command == "exec":
 		try:
