@@ -1,0 +1,6 @@
+escript 0.1
+/// Hello World
+
+log Hello World!
+
+end
