@@ -30,3 +30,6 @@ Effectively, yeah -- EsosCMD is a continuation of the original idea for SpeedStr
 
 ### How do I run it?
 Run `kernel.py` with Python 3.6 or later.
+
+### Any releases?
+When version 1.0 gets finished... and also when I find out how to deploy Python apps to computers without Python.
