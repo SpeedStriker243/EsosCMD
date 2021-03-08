@@ -28,7 +28,11 @@ def StartupMessage():
 			
 def EsosScript(filename):
 	try:
-		ScriptFile = open(filename + ".ess")
+		if filename[5:] == ".ess":
+			fnwoext = filename.split(".")[0]
+		else:
+			fnwoext = filename
+		ScriptFile = open(fnwoext + ".ess")
 		ScriptLine = ""
 		LineCount = 0
 			
@@ -46,7 +50,7 @@ def EsosScript(filename):
 				print(ScriptLine[4:])
 			elif ScriptLine[:7] == "escript":
 				print(f"Using EsosScript version {ScriptLine[8:]}")
-			elif ScriptLine == "":
+			elif ScriptLine == "" or ScriptLine == "\n":
 				pass
 			elif ScriptLine[:3] == "end":
 				break
@@ -56,4 +60,4 @@ def EsosScript(filename):
 				
 		ScriptFile.close	
 	except FileNotFoundError:
-		print(f"The script file {Arg1}.ess was not found.")
+		print(f"The script file {filename}.ess was not found.")

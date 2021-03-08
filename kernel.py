@@ -93,6 +93,7 @@ while EsosRunning:
 		print("cmdlist - Show this messsage.")
 		print("help - See above.")
 		print("colo(u)r - Toggle prompt colour on or off.")
+		print("script - Run an EsosScript file.")
 	
 	elif Command == "color" or Command == "colour":
 		if Colour:
@@ -107,7 +108,7 @@ while EsosRunning:
 	elif Command == "script":
 		if Arg1 == "":
 			print("script can be used to run EsosScript files.")
-			print("Usage: script <file name> (without extension)")
+			print("Usage: script <file name>")
 		else:
 			EsosFunctions.EsosScript(Arg1)
 
