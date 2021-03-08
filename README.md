@@ -1,6 +1,12 @@
 # EsosCMD
 A command-line application written in Python. It's just a simple command processor behind the scenes, but it feels a lot like an OS.
 
+## What's new with version 0.2
+- This segment! Figured I should.
+- EsosScript support.
+- The EsosFunctions file has more purpose now!
+- For Windows computers, EsosCMD will now automatically disable the prompt colours. *nix systems automatically have the colour on.
+
 ## Tasks
 ### Achieved
 - Create a command processor
