@@ -89,7 +89,17 @@ while EsosRunning:
         print("whoami - Print your username.")
         print("exec <command> - Run a native command.")
         print("cmdlist - Show this messsage.")
-        print("help - See above.")
+        print("help - See above."
+              
+    elif Command == "color" or Command == "colour":
+        if Colour:
+              Colour = false
+              print("Prompt colours have been disabled.")
+        if not Colour:
+              Colour = true
+              print("Prompt colours have been enabled.")
+              if OSName == "Windows":
+                print("You're on Windows, though, so it won't work unless you're in Cygwin.")
 
     elif Command == "exit":
         print("Thanks for trying out EsosCMD!")
