@@ -2,6 +2,7 @@
 A command-line application written in Python. It's just a simple command processor behind the scenes, but it feels a lot like an OS.
 
 > Note: EsosCMD's Python version may be deprecated in favour of a C++ version (that functions the same, but that way I can learn C++ better)
+> > Note 2: no
 
 ## What's new with version 0.2-prerelease
 - This segment! Figured I should.
